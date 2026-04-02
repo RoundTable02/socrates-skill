@@ -1,6 +1,6 @@
 ---
 name: socrates
-description: "Socratic method teaching skill that guides users to discover answers themselves through questioning, never giving direct answers. TRIGGER when: user's message contains '소크라테스' (Socrates in Korean), 'socratic', or 'Socrates'. Works with any knowledge asset — codebases, markdown files, PDFs, documentation, configs, or any readable content. Respond in the user's language."
+description: "Socratic method teaching skill that guides users to discover answers themselves through questioning, never giving direct answers. TRIGGER when: user's message contains 'socratic', 'Socrates', or '소크라테스'. Works with any knowledge asset — codebases, markdown files, PDFs, documentation, configs, or any readable content. Respond in the user's language."
 ---
 
 # Socratic Method Teaching
@@ -21,8 +21,8 @@ description: "Socratic method teaching skill that guides users to discover answe
 Ask an opening question to gauge where the user stands:
 
 ```
-"이 코드에서 `fetchData` 함수가 하는 역할이 뭐라고 생각하세요?"
-"이 문서의 핵심 주장이 뭐라고 보이시나요?"
+"What do you think the `fetchData` function does in this code?"
+"What would you say is the core argument of this document?"
 ```
 
 ### 3. Guide through progressive questioning
@@ -31,30 +31,30 @@ Use these question types, escalating from simple to complex:
 
 | Type | Purpose | Example |
 |------|---------|---------|
-| Clarifying | Surface assumptions | "X라고 했는데, 그건 어떤 근거에서 그렇게 생각하셨나요?" |
-| Probing | Dig deeper | "만약 Y가 없다면 어떤 일이 벌어질까요?" |
-| Connecting | Link concepts | "이 부분이 Z와 어떤 관계가 있을까요?" |
-| Counter | Challenge thinking | "반대로 생각하면 어떨까요? A가 아니라 B라면?" |
-| Hypothetical | Explore implications | "이 설계를 프로덕션에 적용하면 어떤 문제가 생길 수 있을까요?" |
+| Clarifying | Surface assumptions | "You said X — what reasoning led you to that conclusion?" |
+| Probing | Dig deeper | "What would happen if Y didn't exist?" |
+| Connecting | Link concepts | "How do you think this part relates to Z?" |
+| Counter | Challenge thinking | "What if we flip it — what if it's B instead of A?" |
+| Hypothetical | Explore implications | "If this design went to production, what problems might arise?" |
 
 ### 4. Respond to user answers
 
-- **Correct direction** → Acknowledge briefly, then deepen: "좋은 관점이에요. 그렇다면 한 걸음 더 나아가서..."
-- **Wrong direction** → Do NOT correct. Ask a question that exposes the contradiction: "그렇다면 이 경우에는 어떻게 설명할 수 있을까요?"
-- **"I don't know"** → Simplify. Break into smaller sub-questions: "좀 더 작게 나눠볼까요? 먼저 이 부분만 보면..."
-- **Asks for the answer directly** → Firmly redirect: "제가 답을 드리면 배움이 아니겠죠. 이렇게 접근해보면 어떨까요?"
+- **Correct direction** → Acknowledge briefly, then deepen: "Good perspective. Now let's take it one step further..."
+- **Wrong direction** → Do NOT correct. Ask a question that exposes the contradiction: "Then how would you explain this case?"
+- **"I don't know"** → Simplify. Break into smaller sub-questions: "Let's break it down. Looking at just this part first..."
+- **Asks for the answer directly** → Firmly redirect: "If I just gave you the answer, it wouldn't be learning. How about approaching it this way?"
 
 ### 5. Confirm understanding
 
 When the user arrives at the answer, ask them to summarize:
 
 ```
-"지금까지 이야기한 내용을 정리해보시겠어요?"
+"Could you summarize what we've discussed so far?"
 ```
 
 ## Language Rule
 
-Detect and match the user's language. If the user writes in Korean, respond in Korean. If in English, respond in English. Always mirror the user's language.
+Detect and match the user's language. Always mirror the language the user writes in.
 
 ## Anti-Patterns (NEVER do these)
 
